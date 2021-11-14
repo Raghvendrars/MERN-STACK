@@ -23,16 +23,14 @@ const Home = () => {
     toast.success("Successfully created!");
     loadStudent();
   };
+  
   return (
     <>
       <div className="container mt-4">
         <div className="jumbotron jumbotron-fluid">
           <div className="container">
             <h1 className="display-4">LDCE Students</h1>
-            <p className="lead">
-              This is a modified jumbotron that occupies the entire horizontal
-              space of its parent.
-            </p>
+            <p className="lead">This is a Student Details page.</p>
           </div>
         </div>
         <div className="mt-4 mb-4">
@@ -44,11 +42,10 @@ const Home = () => {
           <thead>
             <tr>
               <th scope="col">Sr</th>
-              <th scope="col">ID</th>
+              <th scope="col">Id</th>
               <th scope="col">Name</th>
               <th scope="col">Mobile</th>
-              <th scope="col">Acrions</th>
-
+              <th scope="col">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -65,10 +62,8 @@ const Home = () => {
                   >
                     Edit
                   </Link>
-                
-                
                   <button
-                    class="btn btn-danger"
+                    class="btn btn-danger ml-4"
                     onClick={() => deleteUser(stdata._id)}
                   >
                     Delete

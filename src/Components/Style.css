@@ -1,0 +1,18 @@
+.Update-page-container{
+    width: 50%;
+    padding: 50px;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+
+.UpdateStudentForm{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.Form-Lables{
+    font-size: 16px;
+    float: left;
+}

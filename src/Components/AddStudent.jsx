@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./Style.css"
 
 const AddStudent = () => {
   let navigate = useNavigate();
@@ -26,7 +27,7 @@ const AddStudent = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container Update-page-container">
       <div className="jumbotron jumbotron-fluid mt-4 mb-4">
         <div className="container">
           <h1 className="display-4">LDCE Students</h1>
@@ -36,40 +37,10 @@ const AddStudent = () => {
           </p>
         </div>
       </div>
-      {/* <form className="w-50" onSubmit={(e) => onSubmit(e)}>
-        <div className="form-group">
-          <label for="exampleInputEmail1">Student Name</label>
-          <input
-            type="text"
-            name="fullname"
-            value={fullname}
-            required
-            onChange={(e) => onInputChange(e)}
-            className="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-          />
-        </div>
-        <div className="form-group">
-          <label for="exampleInputPassword1">Mobile Num</label>
-          <input
-            type="number"
-            name="mobile"
-            value={mobile}
-            required
-            onChange={(e) => onInputChange(e)}
-            className="form-control"
-            id="exampleInputPassword1"
-          />
-        </div>
-
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-      </form> */}
+      <div className="UpdateStudentForm">
       <form onSubmit={(e) => onSubmit(e)}>
         <div class="form-group mb-3">
-          <label for="exampleInputPassword1">Student Name</label>
+          <label for="exampleInputPassword1" className="Form-Lables"><h6>Student Name</h6></label>
           <input
             type="text"
             name="fullname"
@@ -80,7 +51,7 @@ const AddStudent = () => {
           />
         </div>
         <div class="form-group mb-3">
-          <label for="exampleInputPassword1">Mobile</label>
+          <label for="exampleInputPassword1" className="Form-Lables"><h6>Mobile</h6></label>
           <input
             type="text"
             name="mobile"
@@ -95,6 +66,7 @@ const AddStudent = () => {
           Add Student
         </button>
       </form>
+      </div>
     </div>
   );
 };

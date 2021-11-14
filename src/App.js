@@ -1,8 +1,8 @@
 import logo from "./logo.svg";
 import "./App.css";
 import Home from "./Home";
-import AddStudent from "./AddStudent";
-import UpdateStudent from "./UpdateStudent";
+import AddStudent from "./Components/AddStudent";
+import UpdateStudent from "./Components/UpdateStudent";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
