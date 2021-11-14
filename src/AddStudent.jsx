@@ -6,26 +6,23 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const AddStudent = () => {
   let navigate = useNavigate();
-  const [studentData, setStudentData] = useState({
+  const [studentdata, setStudent] = useState({
     fullname: "",
-    mobile: ""
+    mobile: "",
   });
 
-  const { fullname, mobile } = studentData;
-  // to add student
+  const { fullname, mobile } = studentdata;
   const onInputChange = (e) => {
-    setStudentData({ ...studentData, [e.target.name]: e.target.value });
+    setStudent({ ...studentdata, [e.target.name]: e.target.value });
   };
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const ifSuccess = await axios.post("/student/", studentData);
-    if (ifSuccess) {
-      console.log(studentData);
-      navigate("/");
-    } else {
-      navigate("/add");
-    }
+    await axios.post(
+      "/student/",
+      studentdata
+    );
+    navigate("/");
   };
 
   return (
@@ -39,7 +36,7 @@ const AddStudent = () => {
           </p>
         </div>
       </div>
-      <form className="w-50" onSubmit={(e) => onSubmit(e)}>
+      {/* <form className="w-50" onSubmit={(e) => onSubmit(e)}>
         <div className="form-group">
           <label for="exampleInputEmail1">Student Name</label>
           <input
@@ -68,6 +65,34 @@ const AddStudent = () => {
 
         <button type="submit" className="btn btn-primary">
           Submit
+        </button>
+      </form> */}
+      <form onSubmit={(e) => onSubmit(e)}>
+        <div class="form-group mb-3">
+          <label for="exampleInputPassword1">Student Name</label>
+          <input
+            type="text"
+            name="fullname"
+            class="form-control"
+            id="exampleInputPassword1"
+            value={fullname}
+            onChange={(e) => onInputChange(e)}
+          />
+        </div>
+        <div class="form-group mb-3">
+          <label for="exampleInputPassword1">Mobile</label>
+          <input
+            type="text"
+            name="mobile"
+            class="form-control"
+            id="exampleInputPassword1"
+            value={mobile}
+            onChange={(e) => onInputChange(e)}
+          />
+        </div>
+        
+        <button type="submit" class="btn btn-primary">
+          Add Student
         </button>
       </form>
     </div>
