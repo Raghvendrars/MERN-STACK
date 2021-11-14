@@ -36,6 +36,18 @@ const AddStudent = () => {
             space of its parent.
           </p>
         </div>
+        <div className="row">
+            <div className="col">
+              <a href="/">
+                <button
+                  className="btn btn-md btn-primary mt-2 mb-2"
+                  style={{ float: "right" }}
+                >
+                  Back To Home
+                </button>
+              </a>
+            </div>
+          </div>
       </div>
       <div className="UpdateStudentForm">
       <form onSubmit={(e) => onSubmit(e)}>
@@ -46,6 +58,7 @@ const AddStudent = () => {
             name="fullname"
             class="form-control"
             id="exampleInputPassword1"
+            required
             value={fullname}
             onChange={(e) => onInputChange(e)}
           />
@@ -58,6 +71,7 @@ const AddStudent = () => {
             class="form-control"
             id="exampleInputPassword1"
             value={mobile}
+            required
             onChange={(e) => onInputChange(e)}
           />
         </div>
